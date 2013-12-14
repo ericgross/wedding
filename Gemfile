@@ -35,5 +35,5 @@ group :doc do
 end
 
 gem 'thin'
-gem 'therubyracer', :require => 'v8'
-gem 'rails_12factor'
+gem 'therubyracer', :require => 'v8', group: :develop
+gem 'rails_12factor', group: :production
