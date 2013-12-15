@@ -716,33 +716,33 @@ section h2 {
 
 @font-face {
     font-family: 'futura_ltbold';
-    src: url('stylesheets/futuralt-bold-webfont.eot');
-    src: url('stylesheets/futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),  /* IE6-IE8 */
-         url('stylesheets/futuralt-bold-webfont.woff') format('woff'),  /* Modern Browsers */
-         url('stylesheets/futuralt-bold-webfont.ttf') format('truetype'),  /* Safari, Android, iOS */
-         url('stylesheets/futuralt-bold-webfont.svg#futura_ltbold') format('svg');  /* Legacy iOS */
+    src: url('futuralt-bold-webfont.eot');
+    src: url('futuralt-bold-webfont.eot?#iefix') format('embedded-opentype'),  /* IE6-IE8 */
+         url('futuralt-bold-webfont.woff') format('woff'),  /* Modern Browsers */
+         url('futuralt-bold-webfont.ttf') format('truetype'),  /* Safari, Android, iOS */
+         url('futuralt-bold-webfont.svg#futura_ltbold') format('svg');  /* Legacy iOS */
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'futura_ltbook';
-    src: url('stylesheets/futuralt-book-webfont.eot');
-    src: url('stylesheets/futuralt-book-webfont.eot?#iefix') format('embedded-opentype'),
-         url('stylesheets/futuralt-book-webfont.woff') format('woff'),
-         url('stylesheets/futuralt-book-webfont.ttf') format('truetype'),
-         url('stylesheets/futuralt-book-webfont.svg#futura_ltbook') format('svg');
+    src: url('futuralt-book-webfont.eot');
+    src: url('futuralt-book-webfont.eot?#iefix') format('embedded-opentype'),
+         url('futuralt-book-webfont.woff') format('woff'),
+         url('futuralt-book-webfont.ttf') format('truetype'),
+         url('futuralt-book-webfont.svg#futura_ltbook') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'futura_ltregular';
-    src: url('stylesheets/futuralt-webfont.eot');
-    src: url('stylesheets/futuralt-webfont.eot?#iefix') format('embedded-opentype'),
-         url('stylesheets/futuralt-webfont.woff') format('woff'),
-         url('stylesheets/futuralt-webfont.ttf') format('truetype'),
-         url('stylesheets/futuralt-webfont.svg#futura_ltregular') format('svg');
+    src: url('futuralt-webfont.eot');
+    src: url('futuralt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('futuralt-webfont.woff') format('woff'),
+         url('futuralt-webfont.ttf') format('truetype'),
+         url('futuralt-webfont.svg#futura_ltregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
