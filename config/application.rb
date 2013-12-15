@@ -21,11 +21,7 @@ module Wedding
     # config.i18n.default_locale = :de
 
     # Adding Webfonts to the Asset Pipeline
-    config.assets.precompile << Proc.new { |path|
-      if path =~ /\.(eot|svg|ttf|woff)\z/
-        true
-      end
-    }
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
   end
 end
