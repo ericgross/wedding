@@ -22,6 +22,6 @@ module Wedding
 
     # Adding Webfonts to the Asset Pipeline
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
-
+    config.assets.precompile += ['jquery.js']
   end
 end
