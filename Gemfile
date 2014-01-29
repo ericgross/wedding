@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
-
-ruby '2.0.0'
-
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+ruby '2.1.0'
 gem 'rails', '4.0.2'
 
 # Use postgresql as the database for Active Record
@@ -38,3 +35,6 @@ end
 gem 'thin'
 gem 'therubyracer', :require => 'v8', group: :develop
 gem 'rails_12factor', group: :production
+gem 'simple_form'
+gem 'slim-rails'
+gem 'pry-rails'

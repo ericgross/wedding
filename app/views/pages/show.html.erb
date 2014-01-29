@@ -1,0 +1,83 @@
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+        <div id="bg-image">
+            <img src="images/bg-pic.jpg" alt="">
+        </div>
+
+        <div id="bg-container">
+
+            <div class="header-container">
+                <div id="heading" class="wrapper clearfix">
+                    <nav id="nav">
+                    <ul>
+                      <li><a href="#savethedate">SAVE THE WEEKEND</a></li>
+                      <li><a href="#provide_info">PROVIDE YOUR INFORMATION</a></li>
+                    </ul>
+
+                    </nav>
+                </div>
+            </div>
+
+            <div class="main-container">
+                <div class="main wrapper clearfix">
+
+                    <header>
+                        <div id="introtext">
+                            <span class="head-sarah">Sarah</span>
+                            <span class="head-brad">&nbsp;
+                                <span class="amp">&amp;</span> 
+                                ERIC
+                            </span>
+                            <div class="date">AUGUST 31<sup>st</sup>, 2014</div>
+
+                        </div>
+                    </header>
+
+                    <div class="clearfix"></div>
+
+                    <section id="savethedate" class="clearfix">
+                    <h1>Save the Weekend</h1>
+                    <div class="column_full">
+                      Welcome to our website!
+                      Please <a href="#provide_info">Give us your Information</a>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <section id="provide_info" class="clearfix">
+                    <% if @scroll_to_form && @person.persisted? %>
+                      <h1>Thanks!</h1>
+                      <div class="column_full">
+                        We will be in touch.
+                      </div>
+                    <% else %>
+                      <h1>Tell us about yourself.</h1>
+                      <div class="column_full">
+                        <%= simple_form_for @person do |f| %>
+                          <%= f.input :first_name, :value => @person.first_name %>
+                          <%= f.input :last_name, :value => @person.last_name %>
+                          <%= f.input :email, :value => @person.email %>
+                          <%= f.input :address_line_1, :value => @person.address_line_1 %>
+                          <%= f.input :address_line_2, :value => @person.address_line_2 %>
+                          <%= f.input :address_city, :value => @person.address_city %>
+                          <%= f.input :address_state, :value => @person.address_state, :collection => us_states %>
+                          <%= f.input :address_zip, :value => @person.address_zip %>
+                          <%= f.input :phone_number, :value => @person.phone_number %>
+
+                          <%= f.button :submit, 'Submit Information' %>
+                        <% end %>
+                      <% end %>
+                    </div>
+
+                </div> <!-- #main -->
+            </div> <!-- #main-container -->
+        </div> <!-- #bg-container -->
+      </body>
+      <% if @scroll_to_form %>
+        <script>
+          $('body').scrollTo("#provide_info")
+        </script>
+      <% end %>
+
+</html>
