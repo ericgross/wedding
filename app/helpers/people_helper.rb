@@ -55,4 +55,5 @@ def us_states
       ['Wyoming', 'WY']
     ]
 end
+
 end

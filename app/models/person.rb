@@ -16,15 +16,21 @@
 #  updated_at     :datetime
 #
 
+require 'digest/md5'
+require 'socket'
+
 class Person < ActiveRecord::Base
   validates :first_name, presence: true, length: { minimum: 2 }
   validates :last_name, presence: true, length: { minimum: 2 }
-  validates :email, presence: true, :email => true
+  validates :email, presence: true, :email => true, uniqueness: true
   validates :address_line_1, presence: true, length: { minimum: 5 }
   validates :address_line_2, presence: true
-  validates :address_city, presence: true, length: { minimum: 4 }
+  validates :address_city, presence: true, length: { minimum: 2 }
   validates :address_state, presence: true, length: { is: 2 }
   validates :address_zip, presence: true, length: { is: 5 }, numericality: { only_integer: true }
-  validates :phone_number, presence: true, length: { minimum: 10 }
+  validates :phone_number, presence: true, length: { minimum: 10 }, uniqueness: true
 
+  def url_suffix
+    "?guest=#{Digest::MD5.hexdigest(self.id.to_s)}"
+  end
 end

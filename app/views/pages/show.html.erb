@@ -47,10 +47,11 @@
                     <div class="clearfix"></div>
 
                     <section id="provide_info" class="clearfix">
-                      <% if @scroll_to_form && @person.persisted? %>
+                      <% if @scroll_to_form && @person.persisted? && !params[:guest] %>
                         <h1>Thanks!</h1>
                         <div class="column_full">
-                          We will be in touch.
+                          We will be in touch. 
+                          <!--You can always come back here by going here: <a href="<%= "#{request.protocol}#{request.host_with_port}#{@person.url_suffix}" %>"><%= "#{request.protocol}#{request.host_with_port}#{@person.url_suffix}" %></a> - This information has also been emailed to you.-->
                         </div>
                       <% else %>
                         <h1>Tell us about yourself.</h1>
@@ -76,10 +77,4 @@
             </div> <!-- #main-container -->
         </div> <!-- #bg-container -->
       </body>
-      <% if @scroll_to_form %>
-        <script>
-          $('body').scrollTo("#provide_info")
-        </script>
-      <% end %>
-
 </html>

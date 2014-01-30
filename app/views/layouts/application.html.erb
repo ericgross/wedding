@@ -28,6 +28,14 @@
   <link rel="shortcut icon" href="images/favicon.ico?v=1">
 
   <script src="javascripts/modernizr-2.7.1.js"></script>
+  <% if @scroll_to_form %>
+    <script>
+      $(function() {
+        $('body').scrollTo("#provide_info")
+      });
+    </script>
+  <% end %>
+
 </head>
 <body>
 
