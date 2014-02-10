@@ -24,7 +24,7 @@ class Person < ActiveRecord::Base
   validates :last_name, presence: true, length: { minimum: 2 }
   validates :email, presence: true, :email => true, uniqueness: true
   validates :address_line_1, presence: true, length: { minimum: 5 }
-  validates :address_line_2, presence: true
+  validates :address_line_2
   validates :address_city, presence: true, length: { minimum: 2 }
   validates :address_state, presence: true, length: { is: 2 }
   validates :address_zip, presence: true, length: { is: 5 }, numericality: { only_integer: true }
