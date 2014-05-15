@@ -12,10 +12,11 @@
                     <nav id="nav">
                     <ul>
                       <li><a href="#savethedate">SAVE THE DATE</a></li>
-                      <li><a href="#provide_info">YOUR INFO</a></li>
+                      <!-- <li><a href="#provide_info">YOUR INFO</a></li> -->
                       <li><a href="#schedule">SCHEDULE</a></li>
                       <li><a href="#accommodations">ACCOMMODATIONS</a></li>
                       <li><a href="#directions">DIRECTIONS</a></li>
+                      <li><a href="#registry">REGISTRY</a></li>
                     </ul>
 
                     </nav>
@@ -52,40 +53,12 @@
                     </section>
 
                     <div class="clearfix"></div>
-
-                    <section id="provide_info" class="clearfix">
-                      <% if @scroll_to_form && @person.persisted? && !params[:guest] %>
-                        <h1>Thanks!</h1>
-                        <div class="column_full">
-                          We will be in touch. 
-                          <!--You can always come back here by going here: <a href="<%= "#{request.protocol}#{request.host_with_port}#{@person.url_suffix}" %>"><%= "#{request.protocol}#{request.host_with_port}#{@person.url_suffix}" %></a> - This information has also been emailed to you.-->
-                        </div>
-                      <% else %>
-                        <h1>Tell us about yourself.</h1>
-                        <div class="column_full">
-                          <%= simple_form_for @person do |f| %>
-                            <%= f.input :first_name, :value => @person.first_name %>
-                            <%= f.input :last_name, :value => @person.last_name %>
-                            <%= f.input :email, :value => @person.email %>
-                            <%= f.input :address_line_1, :value => @person.address_line_1 %>
-                            <%= f.input :address_line_2, :value => @person.address_line_2 %>
-                            <%= f.input :address_city, :value => @person.address_city %>
-                            <%= f.input :address_state, :value => @person.address_state, :collection => us_states %>
-                            <%= f.input :address_zip, :value => @person.address_zip %>
-                            <%= f.input :phone_number, :value => @person.phone_number %>
-  
-                            <%= f.button :submit, 'Submit Information' %>
-                          <% end %>
-                        <% end %>
-                      </div>
-                      </section>
-
-                      <div class="clearfix"></div>
-
                       <section id="schedule" class="clearfix">
                       <div class="column left">
                         <h2>Welcome BBQ</h2>
-                        <p>Evening, Saturday, August 30, 2014</p>
+                        <p>Afternoon, Saturday, August 30, 2014</p>
+                        <h2>Bonfire</h2>
+                        <p>Dusk, Saturday, August 30, 2014</p>
                       </div>
                       <div class="column right">
                         <h2>Ceremony & Reception</h2>
@@ -94,10 +67,21 @@
                           <br>
                           Hancock, NY
                         </p>
+                        
+                        <p>
+                          Four o'clock in the afternoon
+                          <br>
+                          Sunday, August 31, 2014
+                        </p>
 
-                        <p>Sunday, August 31, 2014</p>
-                        <p>Time TBD</p>
                         <p>Reception to follow</p>
+                        <h2>Send-off Brunch</h2>
+                        <p>
+                          West Branch Resort
+                          <br>
+                          Monday, September 1, 2014
+                        </p>
+
                       </div>
 
                       </section>
@@ -138,9 +122,15 @@
                             For a full list of directions, <a href="http://www.westbranchresort.com/directions.html">westbranchresort.com/directions.html</a>
                           </p>
                         </div>
-
                       </section>
-                      
+
+                      <section id="registry" class="clearfix">
+                        <div class="column full">
+                          <h1>Registry</h1>
+                          <p>Due to the nature of city life (not a great deal of storage space), we have decided to embrace the idea of a <a href="http://www.myregistry.com/wedding-registry/Sarah-Sluis-Eric-Gross-New-York-NY/551663">honeymoon registry</a>.  However, if you prefer the traditional route, you will also find items we're excited to make room for at <a href="http://www.myregistry.com/wedding-registry/Sarah-Sluis-Eric-Gross-New-York-NY/551663">MyRegistry.com</a>.</p>
+                        </div>
+                      </section>
+ 
                 </div> <!-- #main -->
             </div> <!-- #main-container -->
         </div> <!-- #bg-container -->

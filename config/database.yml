@@ -18,17 +18,17 @@ development:
   adapter: postgresql
   encoding: unicode
   database: wedding_development
-  pool: 5
-  username: postgres
-  password: abc123
+#  pool: 5
+#  username: postgres
+#  password: abc123
 
 production:
   adapter: postgresql
   encoding: unicode
   database: wedding_development
-  pool: 5
-  username: postgres
-  password: abc123
+#  pool: 5
+#  username: postgres
+#  password: abc123
 
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -56,7 +56,7 @@ test:
   adapter: postgresql
   encoding: unicode
   database: wedding_test
-  pool: 5
-  username: wedding
-  password:
+#  pool: 5
+# username: wedding
+#  password:
 
