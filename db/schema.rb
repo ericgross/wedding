@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140128231704) do
+ActiveRecord::Schema.define(version: 20140625135855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 20140128231704) do
     t.string   "address_state"
     t.string   "address_zip"
     t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "rsvps", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.boolean  "attending"
+    t.string   "who"
+    t.string   "additional_person"
+    t.boolean  "bbq"
+    t.boolean  "brunch"
+    t.string   "veggie"
+    t.string   "campfire_song"
+    t.text     "other"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

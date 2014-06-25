@@ -7,7 +7,7 @@
 
 .simple_form label {
   float: left;
-  width: 150px;
+  width: 300px;
   text-align: right;
   margin: 2px 10px;
 }
@@ -61,4 +61,17 @@ label.collection_check_boxes {
   margin: 0;
   vertical-align: -2px;
   margin-left: 2px;
+}
+
+span {
+  display: block;
+}
+
+label {
+  font-weight: bold;
+}
+
+textarea {
+  width: 300px;
+  height: 300px;
 }

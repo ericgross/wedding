@@ -11,7 +11,7 @@
                 <div id="heading" class="wrapper clearfix">
                     <nav id="nav">
                     <ul>
-                      <li><a href="#savethedate">SAVE THE DATE</a></li>
+                      <li><a href="#RSVP">RSVP</a></li>
                       <!-- <li><a href="#provide_info">YOUR INFO</a></li> -->
                       <li><a href="#schedule">SCHEDULE</a></li>
                       <li><a href="#accommodations">ACCOMMODATIONS</a></li>
@@ -40,10 +40,70 @@
 
                     <div class="clearfix"></div>
 
-                    <section id="savethedate" class="clearfix">
-                      <h1>Save the Weekend</h1>
+                    <section id="RSVP" class="clearfix">
+                      <% if @rsvp.persisted? %>
+                        <h1>Thanks so much for the RSVP!</h1>
+                        <div class="column_full">
+                        </div>
+                      <% else %>
+                        <h1>Tell us if you can make it ...</h1>
+                        <div class="column_full">
+                          <%= simple_form_for @rsvp do |f| %>
+                            <%= f.input :first_name, :value => @rsvp.first_name %>
+                            <%= f.input :last_name, :value => @rsvp.last_name %>
+                            <%= f.input :email, :value => @rsvp.email %>
+
+                            <br>
+
+                            <div class="input">
+                              <%= f.label :attending, 'Can you make it to the big day?' %>
+                              <%= f.collection_radio_buttons :attending, [[true, 'Yes, I will be attending Sarah & Eric’s nuptials.'], [false, 'I’ll be celebrating from afar!']], :first, :last, :checked => true %>
+                            </div>
+
+                            <br>
+                            <br>
+                            <div class="input">
+                              <%= f.label :who, 'Who will be attending?', {style: 'height: 150px;'} %>
+                              <%= f.collection_radio_buttons :who, [['me', 'Just me.'], ['spouse', 'My spouse/fiancé/bff/significant other/plus one (name below)'], ['Plus one doesn`t cover it (names below)'], ['nobody', 'Nobody']], :first, :last, :checked => 'me' %>
+                              <%= f.input :additional_person, :value => @rsvp.additional_person, :label => 'Additional guest(s)' %>
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input">
+                              <%= f.label :bbq, 'Will you be joining us for an afternoon BBQ on Saturday, August 30, 2014, which will be followed by a bonfire at sunset?' %>
+                              <%= f.collection_radio_buttons :bbq, [[true, 'I’m already making room in my stomach.'], [false, 'Nope.']], :first, :last, :checked => true %>
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input">
+                              <%= f.label :brunch, 'On Monday morning, we’ll be gathering for a post-wedding brunch. Will you be there?' %>
+                              <%= f.collection_radio_buttons :brunch, [[true, 'Yes, I will need fuel after a night of dancing.'], [false, 'No.']], :first, :last, :checked => true %>
+                            </div>
+
+                            <br>
+                            <br>
+                            <br>
+
+                            <%= f.input :veggie, :value => @rsvp.veggie, :label => 'Are you a vegetarian (who doesn’t eat fish) or vegan?' %>
+                            <%= f.input :campfire_song, :value => @rsvp.campfire_song, :label => 'What is your favorite campfire song?' %>
+                            <%= f.input :other, :as => :text, :value => @rsvp.other, :label => 'Is there anything else we should know?' %>
+
+                            <br>
+                            <br>
+                            <%= f.button :submit, 'Send RSVP!' %>
+                          <% end %>
+                        <% end %>
+                      </div>
+                      </section>
+
+                      <h1>RSVP</h1>
                       <div class="column_full">
-                        <% if @person.persisted? %>
+                        <% if @rsvp.persisted? %>
                           Thanks for giving us your information!
                         <% else %>
                           Welcome to our website!
@@ -140,6 +200,11 @@
  
                 </div> <!-- #main -->
             </div> <!-- #main-container -->
-        </div> <!-- #bg-container -->
+          </div> <!-- #bg-container -->
+          <script>
+            $(function() {
+              $('body').scrollTo("#RSVP")
+              });
+          </script>
       </body>
 </html>
